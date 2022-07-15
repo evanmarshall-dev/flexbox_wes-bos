@@ -1,0 +1,108 @@
+/* Border box makes it so that the border and padding is included in the width of each element and the content box shrinks accordingly */
+*,
+body {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Flex Container */
+.container {
+  border: 5px solid goldenrod;
+  /* Display flex starts up the flexbox. This property spans the full width of the page, whereas inline-flex spans the width of the containing elements (boxes) or content. Display flex automatically makes each box within the flex container a flex item. It brings them from being stacked block elements to inline */
+  display: flex;
+  /* Align items is similar to justify content except the focus is the cross axis or up and down. You won't see the affect unless you provide height to the flex container. Without align items, the flex content would just stretch down the vertical height. Other options are flex-start, flex-end and baseline, which looks at the text inside the flex items and makes sure it is aligned at the baseline */
+  /* align-items: flex-start; */
+  /* Align content is similar to align-items except requires multiple lines of code. Can be combined with justify content (main axis) to align any wrapped items as well */
+  /* align-content: center; */
+  /* justify-content: center; */
+  /* Justify content is used on the flex container and determines how the items are aligned on the axis. Flex start is default so flex items are aligned to the start of the flex container. There is also center and flex-end. Also space-between and space-around */
+  /* justify-content: center; */
+  /* Now change flex direction to column, you need to provide a height to the flex container when using justify content. Keep in mind the axis changes to top-bottom so all of the justify content settings flow that way */
+  /* flex-direction: column; */
+  /* height: 100vh; */
+  /* Flex direction row is the default. This stacks them side-by-side or along the horizontal/main axis and spans height of flex container */
+  /* flex-direction: row; */
+  /* Flex direction column lines up the flex items along the vertical/cross axis */
+  /* flex-direction: column; */
+  /* Flex direction reverse options line the items up along the corresponding axis, but in the reverse direction or the axises start at the right or bottom */
+  /* Flex wrap is put on the container and not the items. The default is nowrap */
+  /* Wrap will cause the flex items to wrap to a new line when they hot the outside of the window. The flex items will still add up to the 100 vh we gave the flex container */
+  /* flex-wrap: wrap; */
+}
+
+/* Select all flex items */
+.box {
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  /* Flex basis in combo with flex-wrap wrap as well as flex grow determines size of boxes */
+  /* flex-basis: 500px; */
+  /* flex-grow: 1; */
+  /* Flex box will try to work with the widths you provide, but if it doesn't work out then it will evenly distribute them along the axis */
+  /* width: 300px; */
+  /* You can make the flex items fill the window or flex container by using the third of the screen or any percentage adding to 100%. Keep in mind if you change the flex direction to column the items will wrap horizontally once they hit the bottom of the window */
+  /* width: 33.33333333%; */
+  /* width: calc(25% - 2%); */
+  /* You need to account for margin in the total width when added. See above calc */
+  /* margin: 1%; */
+  /* Padding and border won't have the same effect because it is included in the border box model above */
+  /* padding: 2%; */
+  /* border: 4px solid black; */
+  /* flex:1 will evenly distribute each flex item along the axis. Flex property determines how items fill the container. They can be decimal points */
+  /* flex: 1; */
+  /* Flex grow to 1 and flex shrink to 1 is the same as flex to 1. Flex basis takes into account before flex properties, see below */
+}
+
+/* Using the order property, the default order is set to 0. So if you add anything but 0 as a value for this property it moves the flex item to the end. Each order you assign in single increments will put that flex item as the next item after 1 on the end of the flex container. Useful for mobile design if the client wants the whole order of items change on a smaller screen. Negative numbers also works and this concept is similar to z-index except on an x or y axis not z axis */
+
+/* Flex Items */
+.box1 {
+  background: #1abc9c;
+  /* flex-basis: 400px; */
+  /* flex-grow: 1; this sets up something similar to offset and all default flex-grow is 0. Without wrapping when there isn't enough space they will start trimming themselves down; this is flex-shrink */
+  /* flex-shrink: 10; this box will shrink more than box 6, by 10 times */
+  /* This can all be written in short hand with flex, flex-grow, flex-shrink as seen below */
+  /* flex: 10 5 400px; */
+}
+.box2 {
+  background: #3498db;
+  /* Align self used with single item inside the flex container and it overwrites align items */
+  /* align-self: flex-end; */
+  /* padding-bottom: 200px; for align self example */
+  /* order: 1; */
+}
+.box3 {
+  /* flex: 2; for the flex property example */
+  background: #9b59b6;
+}
+.box4 {
+  background: #34495e;
+  /* order: 2; */
+}
+.box5 {
+  background: #f1c40f;
+  /* padding-bottom: 0; for align self example */
+}
+.box6 {
+  background: #e67e22;
+  /* flex-basis: 400px; */
+  /* Also flex shorthand with this box */
+  /* flex: 1 1 400px; */
+}
+.box7 {
+  background: #e74c3c;
+}
+.box8 {
+  background: #bdc3c7;
+}
+.box9 {
+  background: #2ecc71;
+  /* padding-bottom: 50px; for align self example */
+}
+.box10 {
+  background: #16a085;
+}
